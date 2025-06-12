@@ -1,23 +1,18 @@
-import os
-import sys
-# DON'T CHANGE THIS !!!
-sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
-
 from flask import Flask, send_from_directory
 from flask_cors import CORS
-from src.models.user import db
-from src.routes.user import user_bp
-from src.routes.auth import auth_bp
-from src.routes.cidade import cidade_bp
-from src.routes.clube import clube_bp
-from src.routes.categoria import categoria_bp
-from src.routes.jogador import jogador_bp
+from user import db
+from user import user_bp
+from auth import auth_bp
+from cidade import cidade_bp
+from clube import clube_bp
+from categoria import categoria_bp
+from jogador import jogador_bp
 
-# Importar todos os modelos para garantir que sejam criados
-from src.models.cidade import Cidade
-from src.models.clube import Clube
-from src.models.categoria import Categoria
-from src.models.jogador import Jogador
+from cidade import Cidade
+from clube import Clube
+from categoria import Categoria
+from jogador import Jogador
+
 
 app = Flask(__name__, static_folder=os.path.join(os.path.dirname(__file__), 'static'))
 app.config['SECRET_KEY'] = 'asdf#FGSgvasgf$5$WGT'
